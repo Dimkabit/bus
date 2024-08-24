@@ -13,6 +13,7 @@ const timeZone = "UTC+3";
 const port = 3000;
 
 const app = express();
+app.use(express.static(path.join(__dirname, "public")));
 
 const loadBusses = async () => {
    const data = await readFile(path.join(__dirname, 'buses.json'), "utf-8")
